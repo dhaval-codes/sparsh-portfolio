@@ -10,9 +10,13 @@ import {
 } from "./style";
 import { Description, PrimaryText, SecondaryTextArray } from "@/data/AboutMe";
 import ScrambleTextLoop from "../ScrambledText";
-import { PrimaryButton, SecondaryButton } from "../Buttons";
+import { SecondaryButton } from "../Buttons";
 
 function HeroComponent() {
+  const handleGetInTouch = () => {
+    window.location.href = "mailto:your.email@example.com";
+  };
+
   return (
     <HeroComponentWrpr>
       <HeroTextWrpr>
@@ -31,7 +35,7 @@ function HeroComponent() {
           dangerouslySetInnerHTML={{ __html: Description }}
         />
         <MoreButtonsWrpr>
-          <SecondaryButton text="Get in touch" />
+          <SecondaryButton text="Get in touch" onClick={handleGetInTouch} />
           <SecondaryButton text="View my research" />
         </MoreButtonsWrpr>
       </HeroTextWrpr>

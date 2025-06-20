@@ -27,8 +27,8 @@ export const SecondaryButton = ({ text, onClick }) => {
 
 export const SpecialButton = ({ text, onClick, color = "#ff0000" }) => {
   return (
-    <SpecialButtonWrpr backgroundColor={color} onClick={() => onClick()}>
-      <SpecialButtonText textColor={color}>{text}</SpecialButtonText>
+    <SpecialButtonWrpr color={color} onClick={() => onClick()}>
+      <SpecialButtonText color={color}>{text}</SpecialButtonText>
     </SpecialButtonWrpr>
   );
 };

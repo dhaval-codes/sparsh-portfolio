@@ -11,6 +11,13 @@ export const PrimaryButtonWrpr = styled.button`
   position: relative;
   overflow: hidden;
   transition: all 1s ease;
+  @media (min-width: 1080px) and (max-width: 1440px) {
+    height: 2.5rem;
+  }
+  @media (min-width: 768px) and (max-width: 1079px) {
+    height: 2rem;
+    padding: 0rem 0.5rem;
+  }
 
   &::before {
     content: "";
@@ -42,6 +49,9 @@ export const PrimaryButtonText = styled.span`
   position: relative;
   z-index: 2;
   transition: color 0.8s ease;
+  @media (min-width: 768px) and (max-width: 1079px) {
+    font-size: 0.8125rem;
+  }
 
   ${PrimaryButtonWrpr}:hover & {
     color: ${({ theme }) => theme.backgroundPrimary};
@@ -59,6 +69,13 @@ export const SecondaryButtonWrpr = styled.button`
   position: relative;
   overflow: hidden;
   transition: all 1s ease;
+  @media (min-width: 1080px) and (max-width: 1440px) {
+    height: 2.5rem;
+  }
+  @media (min-width: 768px) and (max-width: 1079px) {
+    height: 2rem;
+    padding: 0rem 0.5rem;
+  }
 
   &::before {
     content: "";
@@ -90,6 +107,9 @@ export const SecondaryButtonText = styled.span`
   position: relative;
   z-index: 2;
   transition: color 0.8s ease;
+  @media (min-width: 768px) and (max-width: 1079px) {
+    font-size: 0.8125rem;
+  }
 
   ${SecondaryButtonWrpr}:hover & {
     color: ${({ theme }) => theme.backgroundPrimary};
@@ -104,20 +124,19 @@ export const SpecialButtonWrpr = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: ${({ backgroundColor }) => `${backgroundColor}50`};
+  background-color: ${({ color }) => `${color}50`};
   cursor: pointer;
   padding: 0rem 1rem;
   transition: box-shadow 0.3s ease;
 
   &:hover {
-    box-shadow: 0 0 8px ${({ backgroundColor }) => backgroundColor},
-      0 0 8px ${({ backgroundColor }) => backgroundColor},
-      0 0 8px ${({ backgroundColor }) => backgroundColor};
+    box-shadow: 0 0 8px ${({ color }) => color}, 0 0 8px ${({ color }) => color},
+      0 0 8px ${({ color }) => color};
   }
 `;
 
 export const SpecialButtonText = styled.span`
   font-size: 0.8125rem;
   font-weight: 600;
-  color: ${({ textColor }) => textColor};
+  color: ${({ color }) => color};
 `;

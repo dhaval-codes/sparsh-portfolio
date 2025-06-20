@@ -11,12 +11,21 @@ export const AppHeaderWrpr = styled.div`
   position: fixed;
   box-shadow: ${({ theme }) => `0px 1px 10px ${theme.accent}`};
   z-index: 10; /* Ensures it stays above other elements */
+  @media (min-width: 768px) and (max-width: 1079px) {
+    padding: 0rem 2rem;
+  }
+  @media (min-width: 300px) and (max-width: 767px) {
+    padding: 0rem 1rem;
+  }
 `;
 
 export const AppHeading = styled.h1`
   font-size: 1.5rem;
   font-weight: 600;
   color: ${({ theme }) => theme.textPrimary};
+  @media (min-width: 768px) and (max-width: 1079px) {
+    font-size: 1.25rem;
+  }
 `;
 
 export const NavOptionWrpr = styled.div`
@@ -24,6 +33,9 @@ export const NavOptionWrpr = styled.div`
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  @media (min-width: 300px) and (max-width: 767px) {
+    display: none; /* Hide on small screens */
+  }
 `;
 
 export const NavOptions = styled.span`
@@ -31,6 +43,9 @@ export const NavOptions = styled.span`
   font-weight: 400;
   color: ${({ theme }) => theme.textPrimary};
   cursor: pointer;
+  @media (min-width: 768px) and (max-width: 1079px) {
+    font-size: 0.8125rem;
+  }
 `;
 
 export const ToggleThemeButton = styled.div`
@@ -40,4 +55,7 @@ export const ToggleThemeButton = styled.div`
   font-size: 1.5rem;
   display: flex;
   align-items: center;
+  @media (min-width: 768px) and (max-width: 1079px) {
+    font-size: 0.8125rem;
+  }
 `;

@@ -7,6 +7,11 @@ export const PublicationBoxWrpr = styled.div`
   display: flex;
   animation: rotatingShadow 4s linear infinite;
   border-radius: 1rem;
+  @media (min-width: 300px) and (max-width: 767px) {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 2rem;
+  }
 
   @keyframes rotatingShadow {
     0% {
@@ -44,23 +49,42 @@ export const PublicationsTextWrpr = styled.div`
   justify-content: center;
   width: 70%;
   gap: 0.5rem;
+  @media (min-width: 300px) and (max-width: 767px) {
+    width: 100%;
+  }
 `;
 
 export const PublicationHeading = styled.h1`
   font-size: 1.25rem;
   color: ${({ theme }) => theme.textPrimary};
+
+  @media (min-width: 768px) and (max-width: 1079px) {
+    font-size: 1rem;
+  }
+  @media (min-width: 300px) and (max-width: 767px) {
+    font-size: 1.5rem;
+  }
 `;
 
 export const PublicationContributors = styled.span`
   font-size: 1rem;
   font-weight: 400;
   color: ${({ theme }) => theme.textSecondary};
+  @media (min-width: 768px) and (max-width: 1079px) {
+    font-size: 1rem;
+  }
 `;
 
 export const PublicationText = styled.p`
   color: ${({ theme }) => theme.textPrimary};
   font-size: 1.25rem;
   font-weight: 400;
+  @media (min-width: 1080px) and (max-width: 1440px) {
+    font-size: 1rem;
+  }
+  @media (min-width: 768px) and (max-width: 1079px) {
+    font-size: 1rem;
+  }
 `;
 
 export const TagButtonWrpr = styled.div`
@@ -81,6 +105,17 @@ export const PublicationLogo = styled.h2`
   height: fit-content;
   cursor: default;
 
+  @media (min-width: 1080px) and (max-width: 1440px) {
+    font-size: 2rem;
+  }
+  @media (min-width: 768px) and (max-width: 1079px) {
+    font-size: 1.5rem;
+  }
+  @media (min-width: 300px) and (max-width: 767px) {
+    font-size: 2.5rem;
+    width: 100%;
+  }
+
   .award {
     margin-top: 1rem;
     font-size: 1.25rem;
@@ -91,6 +126,9 @@ export const PublicationLogo = styled.h2`
     justify-content: center;
     gap: 0.5rem;
     opacity: 0.9;
+    @media (min-width: 768px) and (max-width: 1079px) {
+      font-size: 1rem;
+    }
   }
 
   span {

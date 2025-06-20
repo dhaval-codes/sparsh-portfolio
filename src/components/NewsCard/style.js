@@ -20,6 +20,16 @@ export const NewsHeading = styled.h1`
   padding: 1rem;
   margin: 0;
   width: 12rem;
+  @media (min-width: 1080px) and (max-width: 1440px) {
+    font-size: 1rem;
+  }
+  @media (min-width: 768px) and (max-width: 1079px) {
+    font-size: 1rem;
+  }
+  @media (min-width: 300px) and (max-width: 767px) {
+    font-size: 1rem;
+    width: 9rem;
+  }
 `;
 
 export const NewsDate = styled.span`
@@ -34,4 +44,14 @@ export const NewsDescription = styled.p`
   color: ${({ theme }) => theme.textPrimary};
   padding: 1rem;
   width: calc(100% - 15rem);
+  @media (min-width: 1080px) and (max-width: 1440px) {
+    font-size: 1rem;
+  }
+  @media (min-width: 768px) and (max-width: 1079px) {
+    font-size: 1rem;
+  }
+  @media (min-width: 300px) and (max-width: 767px) {
+    font-size: 1rem;
+    width: calc(100% - 9rem);
+  }
 `;

@@ -1,4 +1,5 @@
 "use client";
+
 import HeroComponent from "@/components/HeroComponent";
 import { PageWrpr } from "./style";
 import LatestNewsComponent from "@/components/LatestNewsComponent";

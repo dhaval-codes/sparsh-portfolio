@@ -1,16 +1,15 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import {
-  PublicationHeading,
-  RecentPublicationsWrpr,
-  SeeMoreButtonWrpr,
-} from "./style";
-import { RecentPublicationsArray } from "@/data/RecentPublications";
-import PublicationBox from "../PublicationBox";
-import { PrimaryButton } from "../Buttons";
-import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 
-function RecentPublicationsComponent() {
+import { RecentPublicationsArray } from "@/data/RecentPublications";
+import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
+import { PublicationHeading } from "@/components/RecentPublicationsComponent/style";
+import { RecentPublicationsWrpr } from "@/components/RecentPublicationsComponent/style";
+
+import { PageWrpr } from "../style";
+import PublicationBox from "@/components/PublicationBox";
+
+function PublicationsPage() {
   const [containerRef, isContainerIntersecting, hasContainerIntersected] =
     useIntersectionObserver();
   const [visiblePublications, setVisiblePublications] = useState([]);
@@ -18,7 +17,7 @@ function RecentPublicationsComponent() {
   useEffect(() => {
     if (hasContainerIntersected) {
       // Stagger the animation of each publication box
-      RecentPublicationsArray.slice(0, 3).forEach((_, index) => {
+      RecentPublicationsArray.forEach((_, index) => {
         setTimeout(() => {
           setVisiblePublications((prev) => [...prev, index]);
         }, index * 200); // 200ms delay between each box
@@ -35,10 +34,10 @@ function RecentPublicationsComponent() {
   }, [isContainerIntersecting, hasContainerIntersected]);
 
   return (
-    <RecentPublicationsWrpr ref={containerRef}>
-      <PublicationHeading>Recent Publications</PublicationHeading>
-      {RecentPublicationsArray.map((items, key) => {
-        if (key < 3) {
+    <PageWrpr>
+      <RecentPublicationsWrpr ref={containerRef}>
+        <PublicationHeading>All Publications</PublicationHeading>
+        {RecentPublicationsArray.map((items, key) => {
           return (
             <PublicationBox
               data={items}
@@ -48,13 +47,10 @@ function RecentPublicationsComponent() {
               animationDelay={key * 0.2}
             />
           );
-        }
-      })}
-      <SeeMoreButtonWrpr>
-        <PrimaryButton text="See More" />
-      </SeeMoreButtonWrpr>
-    </RecentPublicationsWrpr>
+        })}
+      </RecentPublicationsWrpr>
+    </PageWrpr>
   );
 }
 
-export default RecentPublicationsComponent;
+export default PublicationsPage;

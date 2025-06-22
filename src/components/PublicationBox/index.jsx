@@ -10,14 +10,17 @@ import {
   TagButtonWrpr,
 } from "./style";
 import { SpecialButton } from "../Buttons";
-
 import { CustomColors } from "@/data/RecentPublications";
 
-function PublicationBox({ data, index }) {
+function PublicationBox({ data, index, isVisible, animationDelay }) {
   return (
-    <PublicationBoxWrpr index={index}>
+    <PublicationBoxWrpr
+      index={index}
+      isVisible={isVisible}
+      animationDelay={animationDelay}
+    >
       <PublicationsTextWrpr>
-        <PublicationHeading>{data.heading}</PublicationHeading>
+        <PublicationHeading>{data?.heading}</PublicationHeading>
         <PublicationContributors>{data?.contributors}</PublicationContributors>
         <PublicationText>{data.extrainfo}</PublicationText>
         <TagButtonWrpr>
@@ -27,7 +30,7 @@ function PublicationBox({ data, index }) {
                 <SpecialButton
                   key={key}
                   text={key.toUpperCase()}
-                  color={CustomColors[index % CustomColors.length]} // loop colors if more links
+                  color={CustomColors[index % CustomColors.length]}
                   onClick={() => window.open(value, "_blank")}
                 />
               )

@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import {
   Line,
@@ -7,11 +8,14 @@ import {
   NewsHeading,
 } from "./style";
 
-function NewsCard({ data }) {
+function NewsCard({ data, index, isVisible, animationDelay }) {
   return (
-    <NewsCardWrpr>
+    <NewsCardWrpr
+      isVisible={isVisible}
+      animationDelay={animationDelay}
+      index={index}
+    >
       <NewsHeading>{data.date}</NewsHeading>
-      {/* <NewsDate>{data.date}</NewsDate> */}
       <Line />
       <NewsDescription dangerouslySetInnerHTML={{ __html: data.Description }} />
     </NewsCardWrpr>

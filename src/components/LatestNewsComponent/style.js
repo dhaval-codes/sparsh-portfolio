@@ -7,6 +7,7 @@ export const LatestNewsWrpr = styled.div`
   flex-direction: column;
   justify-content: space-between;
   gap: 2rem;
+  cursor: pointer;
   @media (min-width: 1080px) and (max-width: 1440px) {
     gap: 1.5rem;
   }

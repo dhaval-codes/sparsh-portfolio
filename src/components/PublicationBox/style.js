@@ -5,12 +5,27 @@ export const PublicationBoxWrpr = styled.div`
   height: auto;
   padding: 1rem;
   display: flex;
-  animation: rotatingShadow 4s linear infinite;
   border-radius: 1rem;
+
+  /* Initial state - hidden and positioned off-screen */
+  opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
+  transform: ${({ isVisible }) =>
+    isVisible ? "translateX(0)" : "translateX(-100px)"};
+
+  /* Smooth transition */
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: ${({ animationDelay }) => `${animationDelay || 0}s`};
+
+  /* Rotating shadow animation - only when visible */
+  animation: ${({ isVisible }) =>
+    isVisible ? "rotatingShadow 4s linear infinite" : "none"};
+
   @media (min-width: 300px) and (max-width: 767px) {
     flex-direction: column-reverse;
     align-items: center;
     gap: 2rem;
+    transform: ${({ isVisible }) =>
+      isVisible ? "translateY(0)" : "translateY(50px)"};
   }
 
   @keyframes rotatingShadow {
@@ -42,6 +57,7 @@ export const PublicationBoxWrpr = styled.div`
   }
 `;
 
+// Rest of your existing styled components remain the same
 export const PublicationsTextWrpr = styled.div`
   display: flex;
   flex-direction: column;
@@ -53,6 +69,8 @@ export const PublicationsTextWrpr = styled.div`
     width: 100%;
   }
 `;
+
+// ... (rest of your existing styles remain unchanged)
 
 export const PublicationHeading = styled.h1`
   font-size: 1.25rem;

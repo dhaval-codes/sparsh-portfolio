@@ -9,11 +9,13 @@ import { RecentPublicationsArray } from "../../data/RecentPublications.js";
 import PublicationBox from "../PublicationBox";
 import { PrimaryButton } from "../Buttons";
 import { useIntersectionObserver } from "../../hooks/useIntersectionObserver.js";
+import { useRouter } from "next/navigation";
 
 function RecentPublicationsComponent() {
   const [containerRef, isContainerIntersecting, hasContainerIntersected] =
     useIntersectionObserver();
   const [visiblePublications, setVisiblePublications] = useState([]);
+  const router = useRouter();
 
   useEffect(() => {
     if (hasContainerIntersected) {
@@ -51,7 +53,10 @@ function RecentPublicationsComponent() {
         }
       })}
       <SeeMoreButtonWrpr>
-        <PrimaryButton text="See More" />
+        <PrimaryButton
+          text="See More"
+          onClick={() => router.push("/publications")}
+        />
       </SeeMoreButtonWrpr>
     </RecentPublicationsWrpr>
   );

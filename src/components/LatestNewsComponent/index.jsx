@@ -10,11 +10,13 @@ import NewsCard from "../NewsCard";
 import { NewsArray } from "../../data/LatestNews.js";
 import { PrimaryButton } from "../Buttons";
 import { useIntersectionObserver } from "../../hooks/useIntersectionObserver.js"; // Same hook we created before
+import { useRouter } from "next/navigation";
 
 function LatestNewsComponent() {
   const [containerRef, isContainerIntersecting, hasContainerIntersected] =
     useIntersectionObserver();
   const [visibleNewsCards, setVisibleNewsCards] = useState([]);
+  const router = useRouter();
 
   useEffect(() => {
     if (hasContainerIntersected) {
@@ -47,7 +49,7 @@ function LatestNewsComponent() {
         })}
       </NewsCardsWrpr>
       <SeeMoreButtonWrpr>
-        <PrimaryButton text="See More" />
+        <PrimaryButton text="See More" onClick={() => router.push("/news")} />
       </SeeMoreButtonWrpr>
     </LatestNewsWrpr>
   );

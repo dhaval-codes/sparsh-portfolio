@@ -7,9 +7,9 @@ import {
   SeeMoreButtonWrpr,
 } from "./style";
 import NewsCard from "../NewsCard";
-import { NewsArray } from "@/data/LatestNews";
+import { NewsArray } from "../../data/LatestNews.js";
 import { PrimaryButton } from "../Buttons";
-import { useIntersectionObserver } from "@/hooks/useIntersectionObserver"; // Same hook we created before
+import { useIntersectionObserver } from "../../hooks/useIntersectionObserver.js"; // Same hook we created before
 
 function LatestNewsComponent() {
   const [containerRef, isContainerIntersecting, hasContainerIntersected] =
@@ -33,13 +33,14 @@ function LatestNewsComponent() {
       <NewsCardsWrpr>
         {NewsArray.map((items, key) => {
           if (key < 5) {
+            console.log(visibleNewsCards.includes(key), "doom");
             return (
               <NewsCard
                 data={items}
                 key={key}
                 index={key}
-                isVisible={visibleNewsCards.includes(key)}
-                animationDelay={key * 0.15}
+                isvisible={visibleNewsCards.includes(key)}
+                animationdelay={key * 0.15}
               />
             );
           }

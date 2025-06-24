@@ -1,9 +1,8 @@
 "use client";
-
-import HeroComponent from "@/components/HeroComponent";
 import { PageWrpr } from "./style";
-import LatestNewsComponent from "@/components/LatestNewsComponent";
-import RecentPublicationsComponent from "@/components/RecentPublicationsComponent";
+import HeroComponent from "../components/HeroComponent/index.jsx";
+import LatestNewsComponent from "../components/LatestNewsComponent/index.jsx";
+import RecentPublicationsComponent from "../components/RecentPublicationsComponent/index.jsx";
 
 export default function Home() {
   return (

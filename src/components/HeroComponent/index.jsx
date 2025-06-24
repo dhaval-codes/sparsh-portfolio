@@ -8,7 +8,11 @@ import {
   HeroTextWrpr,
   MoreButtonsWrpr,
 } from "./style";
-import { Description, PrimaryText, SecondaryTextArray } from "@/data/AboutMe";
+import {
+  Description,
+  PrimaryText,
+  SecondaryTextArray,
+} from "../../data/AboutMe.js";
 import ScrambleTextLoop from "../ScrambledText";
 import { SecondaryButton } from "../Buttons";
 

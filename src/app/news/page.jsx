@@ -3,10 +3,10 @@ import {
   LatestNewsWrpr,
   NewsCardsWrpr,
   NewsHeading,
-} from "@/components/LatestNewsComponent/style";
-import NewsCard from "@/components/NewsCard";
-import { NewsArray } from "@/data/LatestNews";
-import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
+} from "../../components/LatestNewsComponent/style.js";
+import NewsCard from "../../components/NewsCard/index.jsx";
+import { NewsArray } from "../../data/LatestNews.js";
+import { useIntersectionObserver } from "../../hooks/useIntersectionObserver.js";
 import React, { useState, useEffect } from "react";
 import { PageWrpr } from "../style";
 
@@ -36,8 +36,8 @@ function NewsPage() {
               data={item}
               key={key}
               index={key}
-              isVisible={visibleNewsCards.includes(key)}
-              animationDelay={key * 0.15}
+              isvisible={visibleNewsCards.includes(key)}
+              animationdelay={key * 0.15}
             />
           ))}
         </NewsCardsWrpr>

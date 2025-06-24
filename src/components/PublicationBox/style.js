@@ -1,3 +1,4 @@
+"use client";
 import styled from "styled-components";
 
 export const PublicationBoxWrpr = styled.div`
@@ -8,24 +9,24 @@ export const PublicationBoxWrpr = styled.div`
   border-radius: 1rem;
 
   /* Initial state - hidden and positioned off-screen */
-  opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
-  transform: ${({ isVisible }) =>
-    isVisible ? "translateX(0)" : "translateX(-100px)"};
+  opacity: ${({ isvisible }) => (isvisible ? 1 : 0)};
+  transform: ${({ isvisible }) =>
+    isvisible ? "translateX(0)" : "translateX(-100px)"};
 
   /* Smooth transition */
   transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-  transition-delay: ${({ animationDelay }) => `${animationDelay || 0}s`};
+  transition-delay: ${({ animationdelay }) => `${animationdelay || 0}s`};
 
   /* Rotating shadow animation - only when visible */
-  animation: ${({ isVisible }) =>
-    isVisible ? "rotatingShadow 4s linear infinite" : "none"};
+  animation: ${({ isvisible }) =>
+    isvisible ? "rotatingShadow 4s linear infinite" : "none"};
 
   @media (min-width: 300px) and (max-width: 767px) {
     flex-direction: column-reverse;
     align-items: center;
     gap: 2rem;
-    transform: ${({ isVisible }) =>
-      isVisible ? "translateY(0)" : "translateY(50px)"};
+    transform: ${({ isvisible }) =>
+      isvisible ? "translateY(0)" : "translateY(50px)"};
   }
 
   @keyframes rotatingShadow {

@@ -5,10 +5,10 @@ import {
   RecentPublicationsWrpr,
   SeeMoreButtonWrpr,
 } from "./style";
-import { RecentPublicationsArray } from "@/data/RecentPublications";
+import { RecentPublicationsArray } from "../../data/RecentPublications.js";
 import PublicationBox from "../PublicationBox";
 import { PrimaryButton } from "../Buttons";
-import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
+import { useIntersectionObserver } from "../../hooks/useIntersectionObserver.js";
 
 function RecentPublicationsComponent() {
   const [containerRef, isContainerIntersecting, hasContainerIntersected] =
@@ -44,8 +44,8 @@ function RecentPublicationsComponent() {
               data={items}
               key={key}
               index={key}
-              isVisible={visiblePublications.includes(key)}
-              animationDelay={key * 0.2}
+              isvisible={visiblePublications.includes(key)}
+              animationdelay={key * 0.2}
             />
           );
         }

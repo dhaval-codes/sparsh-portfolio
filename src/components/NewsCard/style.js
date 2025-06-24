@@ -1,3 +1,4 @@
+"use client";
 import styled from "styled-components";
 
 export const NewsCardWrpr = styled.div`
@@ -7,30 +8,30 @@ export const NewsCardWrpr = styled.div`
   display: flex;
 
   /* Initial state - hidden and positioned off-screen */
-  opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
-  transform: ${({ isVisible }) =>
-    isVisible ? "translateX(0) scale(1)" : "translateX(50px) scale(0.95)"};
+  opacity: ${({ isvisible }) => (isvisible ? 1 : 0)};
+  transform: ${({ isvisible }) =>
+    isvisible ? "translateX(0) scale(1)" : "translateX(50px) scale(0.95)"};
 
   /* Smooth transition with bounce effect */
   transition: all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
-  transition-delay: ${({ animationDelay }) => `${animationDelay || 0}s`};
+  transition-delay: ${({ animationdelay }) => `${animationdelay || 0}s`};
 
   /* Add subtle hover effect when visible */
   &:hover {
-    transform: ${({ isVisible }) =>
-      isVisible
+    transform: ${({ isvisible }) =>
+      isvisible
         ? "translateX(-5px) scale(1.02)"
         : "translateX(50px) scale(0.95)"};
     transition: transform 0.3s ease;
   }
 
   @media (min-width: 300px) and (max-width: 767px) {
-    transform: ${({ isVisible }) =>
-      isVisible ? "translateY(0) scale(1)" : "translateY(30px) scale(0.95)"};
+    transform: ${({ isvisible }) =>
+      isvisible ? "translateY(0) scale(1)" : "translateY(30px) scale(0.95)"};
 
     &:hover {
-      transform: ${({ isVisible }) =>
-        isVisible
+      transform: ${({ isvisible }) =>
+        isvisible
           ? "translateY(-3px) scale(1.01)"
           : "translateY(30px) scale(0.95)"};
     }
@@ -45,8 +46,8 @@ export const Line = styled.div`
   /* Add a subtle growth animation for the line */
   transform-origin: top;
   transform: scaleY(0);
-  animation: ${({ isVisible }) =>
-    isVisible ? "lineGrow 0.5s ease-out 0.3s forwards" : "none"};
+  animation: ${({ isvisible }) =>
+    isvisible ? "lineGrow 0.5s ease-out 0.3s forwards" : "none"};
 
   @keyframes lineGrow {
     to {

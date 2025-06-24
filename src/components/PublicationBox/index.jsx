@@ -10,14 +10,14 @@ import {
   TagButtonWrpr,
 } from "./style";
 import { SpecialButton } from "../Buttons";
-import { CustomColors } from "@/data/RecentPublications";
+import { CustomColors } from "../../data/RecentPublications.js";
 
-function PublicationBox({ data, index, isVisible, animationDelay }) {
+function PublicationBox({ data, index, isvisible, animationdelay }) {
   return (
     <PublicationBoxWrpr
       index={index}
-      isVisible={isVisible}
-      animationDelay={animationDelay}
+      isvisible={isvisible}
+      animationdelay={animationdelay}
     >
       <PublicationsTextWrpr>
         <PublicationHeading>{data?.heading}</PublicationHeading>

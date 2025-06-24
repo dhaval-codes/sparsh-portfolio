@@ -1,8 +1,8 @@
 import { Montserrat } from "next/font/google";
 import "./global.css";
 // import { ThemeProviderContext } from "@/utils/themeContext";
-import { ThemeProviderContext } from "@/utils/themeContext";
-import AppHeader from "@/components/AppHeader";
+import { ThemeProviderContext } from "../utils/themeContext.jsx";
+import AppHeader from "../components/AppHeader/index.jsx";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",

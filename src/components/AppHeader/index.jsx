@@ -1,5 +1,4 @@
 "use client";
-
 import React from "react";
 import {
   AppHeaderWrpr,
@@ -8,13 +7,13 @@ import {
   NavOptionWrpr,
   ToggleThemeButton,
 } from "./style";
-import { useTheme } from "@/utils/themeContext";
+import { useTheme } from "../../utils/themeContext.jsx";
 import { MdOutlineLightMode, MdOutlineDarkMode } from "react-icons/md";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 function AppHeader() {
   const { theme, toggleTheme } = useTheme();
-  // const router = useRouter();
+  const router = useRouter();
 
   const navItems = [
     { label: "Home", endpoint: "/" },

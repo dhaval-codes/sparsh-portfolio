@@ -1,4 +1,5 @@
 // hooks/useIntersectionObserver.js
+"use client";
 import { useEffect, useRef, useState } from "react";
 
 export const useIntersectionObserver = (options = {}) => {

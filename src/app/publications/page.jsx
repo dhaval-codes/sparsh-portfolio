@@ -1,13 +1,15 @@
 "use client";
 import React, { useState, useEffect } from "react";
 
-import { RecentPublicationsArray } from "@/data/RecentPublications";
-import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
-import { PublicationHeading } from "@/components/RecentPublicationsComponent/style";
-import { RecentPublicationsWrpr } from "@/components/RecentPublicationsComponent/style";
+import { RecentPublicationsArray } from "../../data/RecentPublications.js";
+import { useIntersectionObserver } from "../../hooks/useIntersectionObserver.js";
+import {
+  PublicationHeading,
+  RecentPublicationsWrpr,
+} from "../../components/RecentPublicationsComponent/style.js";
 
 import { PageWrpr } from "../style";
-import PublicationBox from "@/components/PublicationBox";
+import PublicationBox from "../../components/PublicationBox/index.jsx";
 
 function PublicationsPage() {
   const [containerRef, isContainerIntersecting, hasContainerIntersected] =
@@ -43,8 +45,8 @@ function PublicationsPage() {
               data={items}
               key={key}
               index={key}
-              isVisible={visiblePublications.includes(key)}
-              animationDelay={key * 0.2}
+              isvisible={visiblePublications.includes(key)}
+              animationdelay={key * 0.2}
             />
           );
         })}

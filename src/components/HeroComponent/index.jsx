@@ -18,7 +18,7 @@ import { SecondaryButton } from "../Buttons";
 
 function HeroComponent() {
   const handleGetInTouch = () => {
-    window.location.href = "mailto:your.email@example.com";
+    window.location.href = "mailto:sjshiva8287@gmail.com";
   };
 
   return (

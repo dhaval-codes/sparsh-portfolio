@@ -1,9 +1,9 @@
 export const PrimaryText = "Hi, I'm Sparsh";
 
 export const SecondaryTextArray = [
-  "Research Associate at AI4Bharat Labs",
+  "Research Associate at AI4Bharat.",
   "Completed my bachelors from MAIT",
-  "Really Competent about AI/ML space",
+  "Really Competent about AI/ML.",
 ];
 
 export const Description =

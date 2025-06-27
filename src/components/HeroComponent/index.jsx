@@ -15,11 +15,13 @@ import {
 } from "../../data/AboutMe.js";
 import ScrambleTextLoop from "../ScrambledText";
 import { SecondaryButton } from "../Buttons";
+import { useRouter } from "next/navigation";
 
-function HeroComponent() {
+function HeroComponent({ scrollToSocial }) {
   const handleGetInTouch = () => {
     window.location.href = "mailto:sjshiva8287@gmail.com";
   };
+  const router = useRouter();
 
   return (
     <HeroComponentWrpr>
@@ -39,8 +41,11 @@ function HeroComponent() {
           dangerouslySetInnerHTML={{ __html: Description }}
         />
         <MoreButtonsWrpr>
-          <SecondaryButton text="Get in touch" onClick={handleGetInTouch} />
-          <SecondaryButton text="View my research" />
+          <SecondaryButton text="Get in touch" onClick={scrollToSocial} />
+          <SecondaryButton
+            text="View my research"
+            onClick={() => router.push("/publications")}
+          />
         </MoreButtonsWrpr>
       </HeroTextWrpr>
       <HeroImageWrpr>

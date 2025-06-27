@@ -60,7 +60,7 @@ export const HeroTextHeading = styled.h1`
 `;
 
 export const HeroTextDescription = styled.p`
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: 400;
   color: ${({ theme }) => theme.textPrimary};
   a {
@@ -69,7 +69,7 @@ export const HeroTextDescription = styled.p`
   }
 
   @media (min-width: 1080px) and (max-width: 1440px) {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
   @media (min-width: 768px) and (max-width: 1079px) {
     font-size: 1rem;
@@ -102,7 +102,7 @@ export const HeroImageWrpr = styled.div`
 
   img {
     width: 100%;
-    height: calc(100vh - 5rem);
+    height: auto;
     object-fit: cover;
     transition: transform 0.3s ease-in-out;
     transform: scale(1.03);
